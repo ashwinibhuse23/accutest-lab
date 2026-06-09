@@ -903,7 +903,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             const mForm = document.getElementById("methodForm");
             if (mForm) {
-                mForm.addEventListener("submit-btn", function (e) {
+                mForm.addEventListener("submit", function (e) {
                     e.preventDefault();
 
                     const name = document.getElementById('methodName').value;
