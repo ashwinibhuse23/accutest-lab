@@ -346,8 +346,8 @@
                         .finally(function () {
                             pForm2.reset();
                             const link = document.createElement("a");
-                            link.href = "pdf/ARLCorporate.pdf";
-                            link.download = "ARLCorporate.pdf";
+                            link.href = "pdf/CorporatePresentation.pdf";
+                            link.download = "CorporatePresentation.pdf";
                             document.body.appendChild(link);
                             link.click();
                             document.body.removeChild(link);
@@ -368,7 +368,7 @@
                     <div class="col-lg-8">
                         <div class="presentation-alt-content">
                             <span class="section-tag-alt">Excellence in Clinical Trials</span>
-                            <h2>Accutest clinical trial capability</h2>
+                            <h2>Accutest Clinical Trial Capability</h2>
                             <p>
                                 Discover our end-to-end clinical trial expertise, supported by advanced facilities,
                                 experienced research professionals, and robust quality systems. We deliver reliable,
@@ -557,8 +557,8 @@
 
                 // Trigger PDF Download
                 const link = document.createElement("a");
-                link.href = "pdf/coporatepresentation.pdf";
-                link.download = "Accutest_Corporate_Presentation.pdf";
+                link.href = "pdf/ClinicalTrial.pdf";
+                link.download = "ClinicalTrial.pdf";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
@@ -813,11 +813,18 @@
                     supported by advanced instrumentation and regulatory-compliant processes.
                 </p>
 
+                <div style="margin-top: -15px; margin-bottom: 20px;">
+                    <button class="btn-default btn-highlighted" onclick="openForm()">
+                        Download PDF
+                    </button>
+                </div>
+
                 <div class="method-features">
                     <div class="feature-item">
                         <img src="https://i.pinimg.com/736x/28/03/24/28032429d5d3efb069d69bb9bd0b99d3.jpg"
                             alt="Bioanalytical Lab">
                         <div>
+
                             <h4>Advanced Bioanalytical Infrastructure</h4>
                             <p>
                                 Two fully equipped bio-analytical laboratories operating under
@@ -857,11 +864,7 @@
             <div class="method-image">
                 <img src="https://i.pinimg.com/736x/65/72/da/6572da506db717469e0262cf8d570a9d.jpg"
                     alt="Modern Laboratory">
-                <div class="mt-4">
-                    <button class="btn-default btn-highlighted" onclick="openForm()">
-                        Download PDF
-                    </button>
-                </div>
+
             </div>
 
         </div>
@@ -900,7 +903,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             const mForm = document.getElementById("methodForm");
             if (mForm) {
-                mForm.addEventListener("submit", function (e) {
+                mForm.addEventListener("submit-btn", function (e) {
                     e.preventDefault();
 
                     const name = document.getElementById('methodName').value;

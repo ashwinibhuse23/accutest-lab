@@ -2225,6 +2225,9 @@ header.main-header .header-sticky.active {
 
 .method-image img {
     width: 100%;
+    margin-top: 100px;
+    height: 500px;
+    object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
 }
