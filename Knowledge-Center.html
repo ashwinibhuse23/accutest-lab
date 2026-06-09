@@ -141,7 +141,7 @@
                                     </a>
                                     <ul class="nav-item submenu">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="Knowledge-Center.html#presentation">
+                                            <a class="nav-link" href="Knowledge-Center.html#presentation2">
                                                 Corporate Presentation/ clinical trial capability
                                             </a>
                                         </li>
@@ -367,7 +367,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-8">
                         <div class="presentation-alt-content">
-                            <span class="section-tag-alt">Corporate Overview</span>
+                            <span class="section-tag-alt">Excellence in Clinical Trials</span>
                             <h2>Accutest clinical trial capability</h2>
                             <p>
                                 Discover our end-to-end clinical trial expertise, supported by advanced facilities,
@@ -897,12 +897,12 @@
             document.body.style.overflow = "auto";
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const mForm = document.getElementById("methodForm");
             if (mForm) {
                 mForm.addEventListener("submit", function (e) {
                     e.preventDefault();
-                    
+
                     const name = document.getElementById('methodName').value;
                     const companyname = document.getElementById('methodCompany').value;
                     const phoneno = document.getElementById('methodPhone').value;
@@ -921,31 +921,31 @@
                         method: 'POST',
                         body: formData
                     })
-                    .then(function (response) {
-                        return Promise.all([response.json(), response.ok, response.status]);
-                    })
-                    .then(function ([jsonData, ok, status]) {
-                        if (ok) {
-                            console.log(jsonData.message || 'Response submitted successfully.');
-                        } else {
-                            console.error(jsonData.error || 'Response not Submitted.');
-                        }
-                    })
-                    .catch(function (error) {
-                        console.error('Fetch error:', error);
-                    })
-                    .finally(function () {
-                        mForm.reset();
-                        const link = document.createElement("a");
-                        link.href = "pdf/Validatedmethodlist.pdf";
-                        link.download = "Validatedmethodlist.pdf";
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
+                        .then(function (response) {
+                            return Promise.all([response.json(), response.ok, response.status]);
+                        })
+                        .then(function ([jsonData, ok, status]) {
+                            if (ok) {
+                                console.log(jsonData.message || 'Response submitted successfully.');
+                            } else {
+                                console.error(jsonData.error || 'Response not Submitted.');
+                            }
+                        })
+                        .catch(function (error) {
+                            console.error('Fetch error:', error);
+                        })
+                        .finally(function () {
+                            mForm.reset();
+                            const link = document.createElement("a");
+                            link.href = "pdf/Validatedmethodlist.pdf";
+                            link.download = "Validatedmethodlist.pdf";
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
 
-                        alert("Download PDF");
-                        closeForm();
-                    });
+                            alert("Download PDF");
+                            closeForm();
+                        });
                 });
             }
         });
