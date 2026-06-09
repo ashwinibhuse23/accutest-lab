@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Form</title>
+    <link rel="stylesheet" href="css/carrerForm.css">
+</head>
+
+<body>
+
+    <!-- BACK BUTTON -->
+   <div class="back-btn-wrapper">
+    <a href="Career.html#career" class="modern-back-btn">
+        <span class="arrow">←</span>
+        <span>Back to Careers</span>
+    </a>
+</div>
+    <section class="job-details-section" id="jobDetails">
+
+        <div class="details-container">
+
+            <!-- JOB 1 -->
+            <div class="job-detail active" id="job1">
+
+                <h2>Clinical Research Associate</h2>
+                <p class="job-location">Location: Pune | Full Time | On-site</p>
+
+                <h4>Job Overview</h4>
+                <p>
+                    Responsible for monitoring clinical trials, ensuring compliance with protocols,
+                    regulatory requirements, and maintaining data integrity.
+                </p>
+
+                <h4>Key Responsibilities</h4>
+                <ul>
+                    <li>Monitor clinical trial sites</li>
+                    <li>Ensure regulatory compliance</li>
+                    <li>Prepare monitoring reports</li>
+                    <li>Coordinate with investigators</li>
+                </ul>
+
+                <h4>Requirements</h4>
+                <ul>
+                    <li>Bachelor’s degree in Life Sciences</li>
+                    <li>2+ years clinical monitoring experience</li>
+                    <li>Strong documentation skills</li>
+                </ul>
+
+                <h4>Apply Now</h4>
+
+                <form class="apply-form">
+
+                    <input type="text" name="name" class="form-control" placeholder="Name" required>
+
+                    <input type="email" placeholder="Email Address" required>
+
+                    <input type="tel" placeholder="Phone Number" required>
+
+                    <textarea rows="4" placeholder="Cover Letter"></textarea>
+
+                    <!-- MULTIPLE FILE INPUT -->
+                    <input type="file" class="fileAttachment" multiple>
+
+                    <!-- FILE NAMES -->
+                    <div id="fileNames" class="fileNames" style="margin-top:10px;"></div>
+
+                    <button type="submit">
+
+                        <span class="btnText">
+                            Submit Application
+                        </span>
+
+                        <span class="btnLoader spinner-border spinner-border-sm" style="display:none;" role="status"
+                            aria-hidden="true">
+                        </span>
+
+                    </button>
+
+                    <div class="txtmessage" style="margin-top:10px; display:none;"></div>
+
+                    <div class="txterror" style="margin-top:10px; display:none;"></div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<style>
+    .back-btn-wrapper{
+    width: 100%;
+    max-width: 1150px;
+    margin: 35px auto 10px;
+    padding: 0 20px;
+}
+
+.modern-back-btn{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 26px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    color: #0b3b70;
+    background: rgba(255,255,255,0.75);
+
+    border: 1px solid rgba(11,59,112,0.12);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.modern-back-btn::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(13,59,115,0.08),
+        rgba(13,59,115,0)
+    );
+    opacity: 0;
+    transition: 0.35s ease;
+}
+
+.modern-back-btn:hover{
+    transform: translateY(-4px);
+    color: #fff;
+    background: linear-gradient(135deg,#0d3b73,#1457a6);
+    box-shadow:
+        0 14px 30px rgba(13,59,115,0.25);
+}
+
+.modern-back-btn:hover::before{
+    opacity: 1;
+}
+
+.modern-back-btn .arrow{
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(13,59,115,0.08);
+
+    font-size: 18px;
+    transition: all 0.35s ease;
+}
+
+.modern-back-btn:hover .arrow{
+    background: rgba(255,255,255,0.18);
+    transform: translateX(-3px);
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    .back-btn-wrapper{
+        margin-top: 20px;
+    }
+
+    .modern-back-btn{
+        width: 100%;
+        justify-content: center;
+        padding: 13px 20px;
+        font-size: 14px;
+    }
+}
+</style>
+
+    <script>
+
+        // SHOW MULTIPLE FILE NAMES
+
+        const fileInput = document.querySelector('.fileAttachment');
+
+        const fileNamesDiv = document.getElementById('fileNames');
+
+        let allFiles = [];
+
+        fileInput.addEventListener('change', function () {
+
+            const newFiles = Array.from(this.files);
+
+            // ADD FILES
+            allFiles = [...allFiles, ...newFiles];
+
+            // CLEAR OLD NAMES
+            fileNamesDiv.innerHTML = '';
+
+            // SHOW ALL FILES
+            allFiles.forEach((file) => {
+
+                fileNamesDiv.innerHTML += `
+            <div style="margin-bottom:5px;">
+                ${file.name}
+            </div>
+        `;
+
+            });
+
+            // IMPORTANT
+            this.value = '';
+
+        });
+
+        // FORM SUBMIT
+
+        const forms = document.querySelectorAll('.apply-form');
+
+        forms.forEach((form) => {
+
+            form.addEventListener('submit', function (e) {
+
+                e.preventDefault();
+
+                const btnText =
+                    form.querySelector('.btnText');
+
+                const btnLoader =
+                    form.querySelector('.btnLoader');
+
+                const submitBtn =
+                    form.querySelector('button[type="submit"]');
+
+                btnText.style.display = 'none';
+                btnLoader.style.display = 'inline-block';
+                submitBtn.disabled = true;
+
+
+                const name =
+                    form.querySelector('input[name="name"]').value;
+
+                const email =
+                    form.querySelector('input[type="email"]').value;
+
+                const phone =
+                    form.querySelector('input[type="tel"]').value;
+
+                const message =
+                    form.querySelector('textarea').value;
+
+                const resumeInput =
+                    form.querySelector('.fileAttachment');
+
+                const messageDiv =
+                    form.querySelector('.txtmessage');
+
+                const errorDiv =
+                    form.querySelector('.txterror');
+
+
+                messageDiv.style.display = 'none';
+                errorDiv.style.display = 'none';
+
+                messageDiv.innerHTML = '';
+                errorDiv.innerHTML = '';
+
+
+                let resumes = [];
+
+                if (
+                    resumeInput &&
+                    resumeInput.files.length > 0
+                ) {
+                    resumes = allFiles;
+                }
+
+
+                // FILE VALIDATION
+
+                const allowedTypes = [
+                    'application/pdf',
+                    'application/msword',
+                    'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+                ];
+
+                const allowedExtensions = [
+                    '.pdf',
+                    '.doc',
+                    '.docx'
+                ];
+
+
+                for (let resume of resumes) {
+
+                    const fileExtension =
+                        resume.name
+                            .substring(
+                                resume.name.lastIndexOf('.')
+                            )
+                            .toLowerCase();
+
+                    if (
+                        !allowedTypes.includes(resume.type) ||
+                        !allowedExtensions.includes(fileExtension)
+                    ) {
+
+                        errorDiv.style.display = 'block';
+                        errorDiv.style.color = 'red';
+
+                        errorDiv.innerHTML =
+                            '<p>Only PDF, DOC, DOCX files allowed.</p>';
+
+                        btnText.style.display = 'inline-block';
+                        btnLoader.style.display = 'none';
+                        submitBtn.disabled = false;
+
+                        return;
+                    }
+                }
+
+
+                // FORM DATA
+
+                const formData = new FormData();
+
+                formData.append('Name', name);
+                formData.append('Email', email);
+                formData.append('Phone', phone);
+                formData.append('Message', message);
+                formData.append('Origin', 'Career');
+
+
+                // MULTIPLE FILES
+
+                resumes.forEach((file) => {
+
+                    formData.append('Files', file);
+
+                });
+
+
+                // API CALL
+
+                fetch('https://oceanfms.com/AccutestAPI/api/sendEmail', {
+
+                    method: 'POST',
+                    body: formData
+
+                })
+
+                    .then((response) => {
+
+                        return Promise.all([
+                            response.json().catch(() => ({})),
+                            response.ok
+                        ]);
+
+                    })
+
+                    .then(([jsonData, ok]) => {
+
+                        if (ok) {
+
+                            messageDiv.style.display = 'block';
+                            messageDiv.style.color = 'green';
+
+                            messageDiv.innerHTML =
+                                `<p>${jsonData.message || 'Application submitted successfully.'}</p>`;
+
+                            form.reset();
+
+                            document.getElementById('fileNames').innerHTML = '';
+
+                        } else {
+
+                            errorDiv.style.display = 'block';
+                            errorDiv.style.color = 'red';
+
+                            errorDiv.innerHTML =
+                                `<p>${jsonData.error || 'Something went wrong.'}</p>`;
+                        }
+
+                    })
+
+                    .catch((error) => {
+
+                        console.error(error);
+
+                        errorDiv.style.display = 'block';
+                        errorDiv.style.color = 'red';
+
+                        errorDiv.innerHTML =
+                            '<p>Server error. Please try again later.</p>';
+
+                    })
+
+                    .finally(() => {
+
+                        btnText.style.display = 'inline-block';
+                        btnLoader.style.display = 'none';
+                        submitBtn.disabled = false;
+
+                    });
+
+            });
+
+        });
+
+
+
+        // JOB SHOW HIDE
+
+        const params = new URLSearchParams(window.location.search);
+
+        const jobId = params.get("job");
+
+        const allJobs =
+            document.querySelectorAll(".job-detail");
+
+        if (jobId) {
+
+            const jobElement =
+                document.getElementById(jobId);
+
+            if (jobElement) {
+
+                jobElement.classList.add("active");
+
+            } else {
+
+                allJobs[0].classList.add("active");
+
+            }
+
+        } else {
+
+            allJobs[0].classList.add("active");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

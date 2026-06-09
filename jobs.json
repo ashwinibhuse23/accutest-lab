@@ -1,0 +1,171 @@
+{
+    "jobs": [
+        {
+            "id": "job1",
+            "title": "Clinical Research Associate",
+            "category": "Clinical Research",
+            "type": "Full Time",
+            "mode": "On-site",
+            "location": "Pune",
+            "overview": "Responsible for monitoring clinical trials, ensuring compliance with protocols, regulatory requirements, and maintaining data integrity.",
+            "responsibilities": [
+                "Monitor clinical trial sites",
+                "Ensure regulatory compliance",
+                "Prepare monitoring reports",
+                "Coordinate with investigators"
+            ],
+            "requirements": [
+                "Bachelor’s degree in Life Sciences",
+                "2+ years clinical monitoring experience",
+                "Strong documentation skills"
+            ]
+        },
+        {
+            "id": "job2",
+            "title": "Medical Laboratory Scientist",
+            "category": "Laboratory Services",
+            "type": "Full Time",
+            "mode": "On-site",
+            "location": "Mumbai",
+            "overview": "Conduct laboratory tests, analyze samples, and ensure accurate medical reporting.",
+            "responsibilities": [
+                "Perform diagnostic tests",
+                "Maintain lab equipment",
+                "Document test results"
+            ],
+            "requirements": [
+                "BSc / MSc in Medical Laboratory Technology",
+                "1+ years lab experience"
+            ]
+        },
+        {
+            "id": "job3",
+            "title": "Pharmacovigilance Officer",
+            "category": "Drug Safety",
+            "type": "Full Time",
+            "mode": "Hybrid",
+            "location": "Hyderabad",
+            "overview": "Monitor drug safety data, assess adverse events, and ensure regulatory compliance.",
+            "responsibilities": [
+                "Review safety reports",
+                "Signal detection & risk analysis",
+                "Maintain safety database"
+            ],
+            "requirements": [
+                "Pharmacy / Life Science graduate",
+                "Experience in pharmacovigilance"
+            ]
+        },{
+    "id": "job4",
+    "title": "Clinical Data Manager",
+    "category": "Clinical Research",
+    "type": "Full Time",
+    "mode": "On-site",
+    "location": "Bangalore",
+    "overview": "Manage clinical trial data, ensuring accuracy, integrity, and compliance with protocols.",
+    "responsibilities": [
+        "Design data collection systems",
+        "Validate clinical data",
+        "Coordinate with clinical teams"
+    ],
+    "requirements": [
+        "Life Science / Biostatistics degree",
+        "Experience with clinical data tools"
+    ]
+},
+{
+    "id": "job5",
+    "title": "Medical Writer",
+    "category": "Medical Affairs",
+    "type": "Full Time",
+    "mode": "Remote",
+    "location": "Mumbai",
+    "overview": "Create scientific documents, regulatory submissions, and medical content.",
+    "responsibilities": [
+        "Write clinical study reports",
+        "Prepare regulatory documents",
+        "Review scientific literature"
+    ],
+    "requirements": [
+        "PhD / MSc in Life Sciences",
+        "Strong writing and research skills"
+    ]
+},
+{
+    "id": "job6",
+    "title": "Regulatory Affairs Specialist",
+    "category": "Regulatory",
+    "type": "Full Time",
+    "mode": "Hybrid",
+    "location": "Delhi",
+    "overview": "Ensure compliance with regulatory requirements for drug approvals and submissions.",
+    "responsibilities": [
+        "Prepare regulatory submissions",
+        "Liaise with authorities",
+        "Track regulatory changes"
+    ],
+    "requirements": [
+        "Pharmacy / Life Sciences degree",
+        "Knowledge of global regulations"
+    ]
+},
+{
+    "id": "job7",
+    "title": "Quality Assurance Associate",
+    "category": "Quality Control",
+    "type": "Full Time",
+    "mode": "On-site",
+    "location": "Ahmedabad",
+    "overview": "Maintain quality standards in pharmaceutical manufacturing and processes.",
+    "responsibilities": [
+        "Conduct audits",
+        "Ensure GMP compliance",
+        "Document quality processes"
+    ],
+    "requirements": [
+        "B.Pharm / M.Pharm",
+        "Experience in QA processes"
+    ]
+},
+{
+    "id": "job8",
+    "title": "Biostatistician",
+    "category": "Data Science",
+    "type": "Full Time",
+    "mode": "Remote",
+    "location": "Pune",
+    "overview": "Analyze clinical data using statistical methods to support research and development.",
+    "responsibilities": [
+        "Design statistical models",
+        "Analyze trial data",
+        "Generate reports and insights"
+    ],
+    "requirements": [
+        "Degree in Statistics / Biostatistics",
+        "Proficiency in SAS or R"
+    ]
+},{
+    "id": "job9",
+    "title": "Biostatistician manager",
+    "category": "Data Science",
+    "type": "Full Time",
+    "mode": "Remote",
+    "location": "Pune",
+    "overview": "Analyze clinical data using statistical methods to support research and development.",
+    "responsibilities": [
+        "Design statistical models",
+        "Analyze trial data",
+        "Generate reports and insights"
+    ],
+    "requirements": [
+        "Degree in Statistics / Biostatistics",
+        "Proficiency in SAS or R"
+    ]
+}
+
+    ]
+
+
+
+
+}

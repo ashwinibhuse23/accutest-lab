@@ -1,0 +1,21 @@
+{
+  "events": [
+    {
+      "image": "event-images/photo1.jpg",
+      "title": "Annual Celebration"
+    },
+    {
+      "image": "event-images/photo2.jpg",
+      "title": "Team Building Activity"
+    },
+    {
+      "image": "event-images/photo3.jpg",
+      "title": "Festival Celebration"
+    },
+    {
+      "image": "event-images/photo4.jpg",
+      "title": "Employee Recognition"
+    }
+     
+  ]
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details</title>
+    <link rel="stylesheet" href="css/carrerForm.css">
+</head>
+
+<body>
+
+<section class="job-details-section" id="jobDetails">
+
+    <div class="details-container" id="jobContainer">
+        <!-- Dynamic content will come here -->
+    </div>
+
+</section>
+
+<script>function customEncodeURI(str) {
+            return str.replace(/[@]/g, '%40')
+                .replace(/[:]/g, '%3A')
+                .replace(/[?]/g, '%3F')
+                .replace(/[/]/g, '%2F')
+                .replace(/[#]/g, '%23')
+                .replace(/[&]/g, '%26')
+                .replace(/[=]/g, '%3D')
+                .replace(/[+]/g, '%2B')
+                .replace(/[ ]/g, '%20');
+        }
+
+        document.getElementById('apply-form').addEventListener("submit", function (e) {
+            debugger
+            e.preventDefault();
+            console.log('Form submitted');
+            const name = document.getElementById('name').value;
+            const toEmail = document.getElementById('email').value;
+            const phoneno = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            const resumeInput = document.getElementById('fileAttachment');
+
+            const subject = "";
+            const htmlContent = "";
+            const messageDiv = document.getElementById('txtmessage');
+            const errorDiv = document.getElementById('txterror');
+            let resume = null;
+            messageDiv.style.display = 'none';
+            errorDiv.style.display = 'none';
+            messageDiv.innerHTML = '';
+            errorDiv.innerHTML = '';
+            if (resumeInput != null) {
+                resume = resumeInput.files[0];
+
+            }
+
+            if (resume) {
+                debugger
+                console.log('Resume file:', resume.name, resume.size, resume.type);
+                const allowedTypes = [
+                    'application/pdf',
+                    'application/msword',
+                    'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+                ];
+                const allowedExtensions = ['.pdf', '.doc', '.docx'];
+                const fileExtension = resume.name.substring(resume.name.lastIndexOf('.')).toLowerCase();
+                if (!allowedTypes.includes(resume.type) || !allowedExtensions.includes(fileExtension)) {
+                    errorDiv.textContent = 'Invalid file type. Please upload a PDF, DOC, or DOCX file.';
+                    console.error('Invalid file type:', resume.type, fileExtension);
+                    return;
+                }
+            }
+
+            const formData = new FormData();
+            formData.append('Name', name);
+            formData.append('Email', toEmail);
+            formData.append('Phone', phoneno);
+            formData.append('Message', message);
+            formData.append('File', resume);
+            formData.append('Origin', 'Career');
+
+
+            const url = 'https://oceanfms.com/AccutestAPI/api/sendEmail';
+
+            fetch(url, {
+                method: 'POST',
+                body: formData
+            })
+
+                .then(function (response) {
+                    debugger
+                    console.error('Response status:', response.status);
+                    console.error('Response headers:', [...response.headers.entries()]);
+                    console.error('Response ok:', response.ok);
+                    return Promise.all([response.json(), response.ok, response.status]);
+                })
+                .then(function ([jsonData, ok, status]) {
+                    debugger
+                    console.error('Response data:', jsonData);
+
+                    if (ok) {
+                        debugger
+                        messageDiv.style.display = 'block';
+                        messageDiv.innerHTML = `<p>${jsonData.message || 'Response submitted successfully.'}</p>`;
+                        errorDiv.style.display = 'none';
+                        errorDiv.innerHTML = '';
+                    } else {
+                        debugger
+                        errorDiv.style.display = 'block';
+                        errorDiv.innerHTML = `<p>${jsonData.error || 'Responce not Submitted.'}</p>`;
+                        messageDiv.style.display = 'none';
+                        messageDiv.innerHTML = '';
+                    }
+                })
+                .catch(function (error) {
+                    debugger
+                    console.error('Fetch error:', error);
+                    // errorDiv.textContent = `Error: ${error.message}`;
+                    errorDiv.style.display = 'block';
+                    errorDiv.innerHTML = `<p>Error: ${error.message}</p>`;
+                    messageDiv.style.display = 'none';
+                    messageDiv.innerHTML = '';
+                })
+                .finally(function () {
+                    debugger
+                    document.getElementById('apply-form').reset();
+                    console.log('Form cleared');
+                });
+        });</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const params = new URLSearchParams(window.location.search);
+    const jobId = params.get("job");
+
+    fetch("jobs.json")
+        .then(res => res.json())
+        .then(data => {
+
+            const job = data.jobs.find(j => j.id === jobId) || data.jobs[0];
+
+            const container = document.getElementById("jobContainer");
+
+            container.innerHTML = `
+                <div class="job-detail active">
+                    <h2>${job.title}</h2>
+                    <p class="job-location">
+                        Location: ${job.location} | ${job.type} | ${job.mode}
+                    </p>
+
+                    <h4>Job Overview</h4>
+                    <p>${job.overview}</p>
+
+                    <h4>Key Responsibilities</h4>
+                    <ul>
+                        ${job.responsibilities.map(item => `<li>${item}</li>`).join("")}
+                    </ul>
+
+                    <h4>Requirements</h4>
+                    <ul>
+                        ${job.requirements.map(item => `<li>${item}</li>`).join("")}
+                    </ul>
+
+                    <h4>Apply Now</h4>
+                    <form id="apply-form" class="apply-form" action="#" method="POST" data-toggle="validator">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Name" autocomplete="name"
+                        required>
+                    <input type="email" placeholder="Email Address" id="email" required>
+                    <input type="tel" placeholder="Phone Number" id="phone" required>
+                    <textarea rows="4" placeholder="Cover Letter" id="message"></textarea>
+                    <input type="file" id="fileAttachment">
+                    <button type="submit">Submit Application</button>
+                    <div id="txtmessage" class="txtmessage"></div>
+                    <div id="txterror" class="txterror"></div>
+                </form>
+                </div>
+            `;
+        });
+
+});
+</script>
+
+</body>
+</html>
