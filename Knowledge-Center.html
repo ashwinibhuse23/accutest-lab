@@ -157,8 +157,8 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="Knowledge-Center.html#podcast">
-                                                Podcast/Webinars/Posters
+                                            <a class="nav-link" href="Knowledge-Center.html#blog">
+                                                Blogs
                                             </a>
                                         </li>
                                     </ul>
@@ -1010,108 +1010,74 @@
 
 
 
-
-
-
-    <!-- Case Study Section Start -->
-    <section class="accu-media-section" id="podcast">
+    <!-- Blog Section Start -->
+    <section class="blog-section" id="blog">
+        <!-- Decorative background blobs -->
+        <div class="blog-blob blog-blob--1"></div>
+        <div class="blog-blob blog-blob--2"></div>
 
         <div class="container">
 
             <!-- HEADER -->
-            <div class="media-header">
-                <span class="section-tag">Knowledge Center</span>
-                <h2>Webinars, Posters & Podcasts</h2>
+            <div class="blog-section-header">
+                <span class="blog-section-tag">Insights That Advance Better Healthcare</span>
+                <h2>Our Latest <span class="blog-title-accent">Blog</span></h2>
                 <p>
-                    Stay updated with expert-led webinars, scientific research posters,
-                    and industry-focused podcasts from our bio-analytical and clinical research teams.
+                    Explore expert articles, medical insights, diagnostic innovations, and the latest developments in laboratory medicine designed to keep healthcare professionals, patients, and researchers ahead of the curve.
                 </p>
             </div>
 
-            <!-- GRID -->
-            <div class="media-grid">
+            <!-- FEATURED BLOG CARD -->
+            <div class="blog-featured-card">
 
-                <!-- Webinar Card -->
-                <div class="media-card">
-                    <div class="media-thumbnail">
-                        <img src="https://i.pinimg.com/avif/1200x/3f/12/56/3f1256b5ea47938c952493711c6980ad.avf"
-                            alt="Clinical Research Webinar">
-                        <div class="play-icon">▶</div>
-                        <span class="media-badge">Webinar</span>
-                    </div>
-                    <div class="media-content">
-                        <h3>Advances in Bioanalytical Method Validation</h3>
-                        <p>
-                            Expert discussion on regulatory expectations, LC-MS/MS sensitivity, and compliance
-                            practices.
-                        </p>
-                        <a href="#" class="media-btn">Watch Now</a>
-                    </div>
+                <!-- Left: Text Content Panel (heading + button only) -->
+                <div class="blog-content-panel">
+                    
+
+                    <h3 class="blog-post-title">Generic Semaglutide in India: Why Immunogenicity Will Make or Break Regulatory Approval</h3>
+
+                    <a href="blogpage.html" class="blog-read-btn">
+                        Read More
+                     
+                    </a>
                 </div>
 
-                <!-- Poster Card -->
-                <div class="media-card">
-                    <div class="media-thumbnail">
-                        <img src="https://i.pinimg.com/736x/64/e2/ef/64e2ef483c136a6bc6333de0c03c9a50.jpg"
-                            alt="Scientific Research Poster">
-                        <span class="media-badge">Poster</span>
-                    </div>
-                    <div class="media-content">
-                        <h3>Pharmacokinetic Study – Clinical Trial Phase I</h3>
-                        <p>Comprehensive bioanalytical data presentation with validated assay performance results.</p>
-                        <a href="#" class="media-btn download">Download Poster</a>
-                    </div>
-                </div>
-
-                <!-- Podcast Card -->
-                <div class="media-card">
-                    <div class="media-thumbnail">
-                        <img src="https://i.pinimg.com/736x/67/30/61/67306197f13700d3cbdca45e8f74c4f8.jpg"
-                            alt="Pharma Podcast">
-                        <div class="play-icon">🎧</div>
-                        <span class="media-badge">Podcast</span>
-                    </div>
-                    <div class="media-content">
-                        <h3>Emerging Trends in Clinical Research</h3>
-                        <p>Industry experts discuss innovation in drug development and global regulatory shifts.</p>
-                        <a href="#" class="media-btn">Listen Now</a>
+                <!-- Right: Image Panel -->
+                <div class="blog-image-panel">
+                    <div class="blog-image-wrap">
+                        <img src="images/blogimage.png" alt="Advances in Bioanalytical Method Validation" />
+                        <div class="blog-image-overlay"></div>
                     </div>
                 </div>
 
             </div>
+            <!-- END FEATURED BLOG CARD -->
+
 
         </div>
-
     </section>
-    <!-- Case Study Section End -->
+    <!-- Blog Section End -->
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
-            const section = document.querySelector(".accu-media-section");
-            const header = document.querySelector(".media-header");
-            const cards = document.querySelectorAll(".media-card");
+            const section = document.querySelector(".blog-section");
+            const header = document.querySelector(".blog-section-header");
+            const card = document.querySelector(".blog-featured-card");
 
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-
-                        // Header animation
-                        header.classList.add("animate");
-
-                        // Stagger card animation
-                        cards.forEach((card, index) => {
-                            setTimeout(() => {
-                                card.classList.add("animate");
-                            }, index * 250);
-                        });
-
+                        if (header) header.classList.add("animate");
+                        if (card) {
+                            setTimeout(() => card.classList.add("animate"), 200);
+                        }
                         observer.unobserve(section);
                     }
                 });
-            }, { threshold: 0.3 });
+            }, { threshold: 0.2 });
 
-            observer.observe(section);
+            if (section) observer.observe(section);
         });
     </script>
 
