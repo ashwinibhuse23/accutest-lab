@@ -2759,12 +2759,12 @@ header.main-header .header-sticky.active {
 
     .blog-image-panel {
         min-height: 320px;
-        order: 2;
+        order: 1;
     }
 
     .blog-content-panel {
         padding: 48px 36px;
-        order: 1;
+        order: 2;
     }
 
     .blog-post-title {
@@ -3402,6 +3402,7 @@ body {
 
 .footer-links-box {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     /* top alignment */
     justify-content: flex-start;

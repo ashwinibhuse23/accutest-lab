@@ -4762,6 +4762,7 @@ body {
 
 .footer-links-box {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;   /* top alignment */
     justify-content: flex-start;
     gap: 70px;                 /* space between Quick Links & Our Services */
