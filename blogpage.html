@@ -13,7 +13,7 @@
     <!-- Page Title -->
     <title>Blog - Beyond Semaglutide | Accutest</title>
     <!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/whitefavicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo-white.png">
     <!-- Google Fonts Css-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -178,7 +178,7 @@
             margin-bottom: 0;
             max-width: 90%;
             font-family: "Segoe UI", sans-serif;
-            margin-top: 50px;
+            margin-top: 15px;
         }
 
         .blog-back-btn {
@@ -224,6 +224,104 @@
             margin-top: 30px;
 
         }
+
+        .blog-author-v3 {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .blog-author-v3::before {
+            content: "";
+            display: inline-block;
+            width: 25px;
+            height: 2px;
+            background-color: #007d55;
+            margin-right: 12px;
+        }
+
+        .blog-author-info-v3 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-author-name-v3 {
+            font-family: "Segoe UI", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #0a3d91;
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+
+        .blog-author-title-v3 {
+            font-family: "Segoe UI", sans-serif;
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .blog-content-section {
+                padding: 40px 0;
+            }
+            .blog-title {
+                font-size: 26px;
+                margin-bottom: 15px;
+            }
+            .blog-subtitle {
+                font-size: 20px;
+                margin-top: 30px;
+            }
+            .blog-subtitle-2 {
+                font-size: 22px;
+                margin-top: 30px;
+            }
+            .blog-text, .blog-intro-lead {
+                max-width: 100%;
+                font-size: 15px;
+                margin-bottom: 15px;
+            }
+            .blog-table-container {
+                margin: 20px -15px;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+                width: calc(100% + 30px);
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .blog-table {
+                min-width: 100%;
+            }
+            .blog-table-container:first-of-type .blog-table {
+                min-width: 850px;
+            }
+            .blog-table-container:last-of-type .blog-table {
+                min-width: 500px;
+            }
+            .blog-table th {
+                padding: 12px 10px;
+                font-size: 14px;
+            }
+            .blog-table td {
+                padding: 12px 10px;
+                font-size: 13px;
+            }
+            .blog-author-v3 {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                align-items: center;
+            }
+            .blog-back-btn {
+                margin-bottom: 20px;
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
     </style>
 </head>
 
@@ -253,6 +351,13 @@
                     <a href="Knowledge-Center.html#podcast" class="blog-back-btn"><i class="fas fa-arrow-left"></i> Back
                         to Knowledge Center</a>
                     <h1 class="blog-title">Beyond Semaglutide: Why Immunogenicity Will Define Success for Generic GLP-1 Agonists and Peptide Therapeutics</h1>
+
+                    <div class="blog-author-v3">
+                        <div class="blog-author-info-v3">
+                            <p class="blog-author-name-v3">Dr. Shailesh Sonar</p>
+                            <p class="blog-author-title-v3">Head of Biologics</p>
+                        </div>
+                    </div>
 
                     <p class="blog-intro-lead">The next five years are poised to reshape the global peptide therapeutics market. As patents protecting several blockbuster peptide drugs begin to expire, pharmaceutical companies across the worldincluding Indiaare accelerating the development of generic and follow-on peptide products.</p>
                     
@@ -425,179 +530,7 @@
     </section>
     <!-- Blog Content Section End -->
 
-    <!-- Footer Start -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-12">
-                    <!-- About Footer Start -->
-                    <div class="about-footer">
-                        <!-- Footer Logo Start -->
-                        <div class="footer-logo">
-                            <img src="images/footer-logo.png" alt="Accutest">
-                        </div>
-                        <!-- Footer Logo End -->
-                        <!-- About Footer Content Start -->
-                        <div class="about-footer-content">
-                            <p>
-                                Accutest is a complete platform for medical, pharmaceutical, and laboratory
-                                testing
-                                services trusted by researchers, institutions, and healthcare partners.
-                            </p>
-                        </div>
-                        <!-- About Footer Content End -->
-                        <!-- Footer Newsletter Box Start -->
-                        <div class="footer-newsletter-box">
-                            <!-- Footer Newsletter Form Start -->
-                            <div class="footer-newsletter-form">
-                                <form id="newslettersForm" action="#" method="POST">
-                                    <div class="form-group footer-policy-row">
-                                        <div class="footer-social">
-                                            <a href="https://www.linkedin.com/company/accutest-research/"
-                                                target="_blank">
-                                                <i class="fab fa-linkedin-in"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- Footer Newsletter Form End -->
-                        </div>
-                        <!-- Footer Newsletter Box End -->
-                    </div>
-                    <!-- About Footer End -->
-                </div>
-                <div class="col-lg-5 col-md-7">
-                    <!-- Footer Links Box Start -->
-                    <div class="footer-links-box">
-                        <!-- Footer Links Start -->
-                        <div class="footer-links">
-                            <h3>Quick Links</h3>
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="index.html#about">About us</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="Contact-Us.html">Contact Us</a></li>
-                            </ul>
-                        </div>
-                        <!-- Footer Links End -->
-                        <!-- Footer Links Start -->
-                        <div class="footer-links">
-                            <h3>Our Services</h3>
-                            <ul>
-                                <li><a href="services.html">Custom Lab Testing</a></li>
-                                <li><a href="services.html">Pharmaceutical Testing</a></li>
-                            </ul>
-                        </div>
-                        <!-- Footer Links End -->
-                    </div>
-                    <!-- Footer Links Box End -->
-                </div>
-                <div class="col-lg-3 col-md-5">
-                    <!-- Footer Working Hour Box Start -->
-                    <div class="footer-working-hour-box footer-links">
-                        <h3>Working Hours</h3>
-                        <ul>
-                            <li>
-                                <span class="day"> Mon- Sat :</span>
-                                <span class="time">09:00AM - 05:30PM</span>
-                            </li>
-                            <li class="working-schedule">
-                                Working Schedule: Monday to Friday and 1st, 3rd &amp; 5th Saturdays
-                                <br>
-                                (2nd and 4th Saturdays off)
-                            </li>
-                            <li>
-                                <span class="day">Sunday :</span>
-                                <span class="time">Closed</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Footer Working Hour Box End -->
-                </div>
-                <div class="col-lg-12">
-                    <!-- Footer Copyright Start -->
-                    <div class="footer-copyright-text">
-                        <p>©2026-2027 Accutest Research Laboratories Pvt. Ltd.</p>
-                    </div>
-                    <!-- Footer Copyright End -->
-                </div>
-            </div>
-        </div>
-    </footer>
 
-    <style>
-        .footer-working-hour-box ul li.working-schedule {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            position: relative;
-            padding-left: 20px;
-            line-height: 1.8;
-        }
-
-        .footer-working-hour-box ul li.working-schedule::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background: linear-gradient(45deg,
-                    #007d55 0%,
-                    #3aa76d 25%,
-                    #3aa76d 50%,
-                    #3aa76d 75%,
-                    #d5ed3b 100%);
-            border-radius: 50%;
-            position: absolute;
-            left: 0;
-            top: 15px;
-            display: block;
-        }
-
-        .footer-social {
-            margin-top: -25px;
-        }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            border: 1.5px solid rgba(255, 255, 255, 0.6);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            background: #ffffff;
-            color: #0A66C2;
-            border-color: #ffffff;
-            transform: translateY(-3px);
-        }
-
-        .footer-policy-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        @media(max-width:768px) {
-
-            .footer-policy-row {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .footer-social {
-                margin: 15px 0 0 0 !important;
-                align-self: flex-start;
-            }
-        }
-    </style>
-    <!-- Footer End -->
 
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
