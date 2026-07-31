@@ -35,10 +35,8 @@
     <link rel="stylesheet" href="css/mousecursor.css">
     <link href="css/services.css" rel="stylesheet" media="screen">
     <link href="css/navbar.css" rel="stylesheet" media="screen">
-
-
-
-
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -387,77 +385,80 @@
                                         <p class="wow fadeInUp" data-wow-delay="0.2s">We're here to answer your
                                             questions & explore new possibilities together.</p>
                                     </div>
-                                    <!-- Section Title End -->
-
                                     <!-- Contact Form Start -->
-                                    <section id="form">
-                                        <div class="contact-form wow fadeInUp" data-wow-delay="0.4s">
-                                            <form id="contactForm" action="#" method="POST" data-toggle="validator">
-                                                <div class="row">
-                                                    <div class="form-group col-md-6 mb-4">
-                                                        <input type="text" name="name" class="form-control" id="name"
-                                                            placeholder="Name" required>
-                                                        <div class="help-block with-errors"></div>
-                                                    </div>
-
-                                                    <div class="form-group col-md-6 mb-4">
-                                                        <input type="text" name="company" class="form-control"
-                                                            id="company" placeholder="Company" required>
-                                                        <div class="help-block with-errors"></div>
-                                                    </div>
-                                                    <div class="form-group col-md-6 mb-4">
-                                                        <input type="text" name="country" class="form-control"
-                                                            id="country" placeholder="Country" required>
-                                                        <div class="help-block with-errors"></div>
-                                                    </div>
-
-                                                    <div class="form-group col-md-6 mb-4">
-                                                        <input type="email" name="email" class="form-control" id="email"
-                                                            placeholder="Email" required>
-                                                        <div class="help-block with-errors"></div>
-                                                    </div>
-
-
-                                                    <div class="form-group col-md-6 mb-4">
-                                                        <input type="text" name="phone" class="form-control" id="phone"
-                                                            placeholder="Phone" required>
-                                                        <div class="help-block with-errors"></div>
-                                                    </div>
-                                                    <div class="form-group col-md-6 mb-4">
-                                                        <input type="text" name="wslf" class="form-control" id="wslf"
-                                                            placeholder="Service Name" required>
-                                                        <div class="help-block with-errors"></div>
-                                                    </div>
-
-
-                                                    <div class="form-group col-md-12 mb-5">
-                                                        <textarea name="message" class="form-control" id="message"
-                                                            rows="4" placeholder="Message..."></textarea>
-                                                        <div class="help-block with-errors"></div>
-                                                    </div>
-
-                                                    <div class="col-md-12">
-                                                        <button type="submit" id="submitBtn"
-                                                            class="btn-default btn-highlighted">
-                                                            <span id="btnText">
-                                                                Submit Message
-                                                            </span>
-                                                            <span id="btnLoader"
-                                                                class="spinner-border spinner-border-sm"
-                                                                style="display: none;" role="status"
-                                                                aria-hidden="true"></span>
-                                                        </button>
-                                                        <div id="txtmessage" class="txtmessage"
-                                                            style="margin-top: 10px; display: none;"></div>
-                                                        <div id="txterror" class="txterror"
-                                                            style="margin-top: 10px; display: none;"></div>
-                                                        <div id="msgSubmit" class="h3 hidden"></div>
-                                                    </div>
+                                    <div class="contact-form wow fadeInUp" data-wow-delay="0.4s">
+                                        <form id="contactForm" action="#" method="POST" novalidate>
+                                            <div class="row">
+                                                <div class="form-group col-md-6 mb-4">
+                                                    <input type="text" name="name" class="form-control" id="name"
+                                                        placeholder="Name *" maxlength="50" required>
+                                                    <div class="help-block with-errors" id="name-error"></div>
                                                 </div>
-                                            </form>
-                                        </div>
 
-                                        <!-- Contact Form End -->
+                                                <div class="form-group col-md-6 mb-4">
+                                                    <input type="text" name="company" class="form-control"
+                                                        id="company" placeholder="Company *" maxlength="100" required>
+                                                    <div class="help-block with-errors" id="company-error"></div>
+                                                </div>
+                                                <div class="form-group col-md-6 mb-4">
+                                                    <input type="text" name="country" class="form-control"
+                                                        id="country" placeholder="Country *" maxlength="50" required>
+                                                    <div class="help-block with-errors" id="country-error"></div>
+                                                </div>
+
+                                                <div class="form-group col-md-6 mb-4">
+                                                    <input type="email" name="email" class="form-control" id="email"
+                                                        maxlength="100" placeholder="Email *" required>
+                                                    <div class="help-block with-errors" id="email-error"></div>
+                                                </div>
+
+                                                <div class="form-group col-md-6 mb-4">
+                                                    <input type="tel" name="phone" class="form-control" id="phone"
+                                                        placeholder="Phone (10 digits) *" maxlength="10" required>
+                                                    <div class="help-block with-errors" id="phone-error"></div>
+                                                </div>
+                                                <div class="form-group col-md-6 mb-4">
+                                                    <input type="text" name="wslf" class="form-control" id="wslf"
+                                                        placeholder="Service Name *" maxlength="100" required>
+                                                    <div class="help-block with-errors" id="wslf-error"></div>
+                                                </div>
+
+                                                <div class="form-group col-md-12 mb-4">
+                                                    <textarea name="message" class="form-control" id="message"
+                                                        rows="4" maxlength="500"
+                                                        placeholder="Message... *" required></textarea>
+                                                    <div class="help-block with-errors" id="message-error"></div>
+                                                </div>
+
+                                                <div class="form-group col-md-12 mb-4">
+                                                    <div class="g-recaptcha" 
+                                                         data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                                                         data-callback="onRecaptchaSuccess"
+                                                         data-expired-callback="onRecaptchaExpired"></div>
+                                                    <div class="help-block with-errors" id="captcha-error"></div>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <button type="submit" id="submitBtn"
+                                                        class="btn-default btn-highlighted">
+                                                        <span id="btnText">
+                                                            Submit Message
+                                                        </span>
+                                                        <span id="btnLoader"
+                                                            class="spinner-border spinner-border-sm"
+                                                            style="display: none;" role="status"
+                                                            aria-hidden="true"></span>
+                                                    </button>
+                                                    <div id="txtmessage" class="txtmessage"
+                                                        style="margin-top: 10px; display: none;"></div>
+                                                    <div id="txterror" class="txterror"
+                                                        style="margin-top: 10px; display: none;"></div>
+                                                    <div id="msgSubmit" class="h3 hidden"></div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- Contact Form End -->
                                 </div>
 
                                 <!-- Google Map Start -->
@@ -688,27 +689,91 @@
                         text-align: center;
                     }
                 }
+
+                /* Contact Form Custom White Field & Validation Styles */
+                .contact-form .form-control {
+                    background-color: #ffffff !important;
+                    color: #1a202c !important;
+                    border: 2px solid #e2e8f0 !important;
+                    border-radius: 12px !important;
+                    padding: 14px 18px !important;
+                    font-size: 15px !important;
+                    font-weight: 500 !important;
+                    line-height: 1.5 !important;
+                    transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) !important;
+                }
+
+                .contact-form .form-control::placeholder {
+                    color: #6c757d !important;
+                    opacity: 1 !important;
+                    font-weight: 400 !important;
+                }
+
+                .contact-form .form-control:focus {
+                    background-color: #ffffff !important;
+                    color: #1a202c !important;
+                    border-color: #007d55 !important;
+                    box-shadow: 0 0 0 4px rgba(0, 125, 85, 0.18) !important;
+                    outline: none !important;
+                }
+
+                .contact-form .form-control.is-invalid {
+                    border-color: #ff3333 !important;
+                    background-color: #ffffff !important;
+                    box-shadow: 0 0 0 3px rgba(255, 51, 51, 0.2) !important;
+                }
+
+                .help-block.with-errors {
+                    margin-top: 6px;
+                    margin-bottom: 4px;
+                    display: none;
+                }
+
+                .help-block.with-errors .error-msg {
+                    color: #ff4d4d;
+                    font-size: 13px;
+                    font-weight: 600;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    background: rgba(255, 255, 255, 0.12);
+                    padding: 5px 12px;
+                    border-radius: 6px;
+                    border-left: 3px solid #ff4d4d;
+                }
             </style>
             <!-- Footer End -->
 
-
-
             <script>
-                function customEncodeURI(str) {
-                    return str.replace(/[@]/g, '%40')
-                        .replace(/[:]/g, '%3A')
-                        .replace(/[?]/g, '%3F')
-                        .replace(/[/]/g, '%2F')
-                        .replace(/[#]/g, '%23')
-                        .replace(/[&]/g, '%26')
-                        .replace(/[=]/g, '%3D')
-                        .replace(/[+]/g, '%2B')
-                        .replace(/[ ]/g, '%20');
-                }
+                // Global reCAPTCHA Callbacks
+                window.onRecaptchaSuccess = function () {
+                    const errorEl = document.getElementById('captcha-error');
+                    if (errorEl) {
+                        errorEl.innerHTML = '';
+                        errorEl.style.display = 'none';
+                    }
+                };
 
-                document.getElementById('contactForm').addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    console.log('Form submitted');
+                window.onRecaptchaExpired = function () {
+                    const errorEl = document.getElementById('captcha-error');
+                    if (errorEl) {
+                        errorEl.innerHTML = '<span class="error-msg"><i class="fas fa-exclamation-circle me-1"></i>reCAPTCHA expired. Please check the box again.</span>';
+                        errorEl.style.display = 'block';
+                    }
+                };
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const contactForm = document.getElementById('contactForm');
+                    if (!contactForm) return;
+
+                    const nameInput = document.getElementById('name');
+                    const companyInput = document.getElementById('company');
+                    const countryInput = document.getElementById('country');
+                    const emailInput = document.getElementById('email');
+                    const phoneInput = document.getElementById('phone');
+                    const serviceInput = document.getElementById('wslf');
+                    const messageInput = document.getElementById('message');
 
                     const btnText = document.getElementById('btnText');
                     const btnLoader = document.getElementById('btnLoader');
@@ -716,87 +781,355 @@
                     const messageDiv = document.getElementById('txtmessage');
                     const errorDiv = document.getElementById('txterror');
 
-                    // Show loader and disable button
-                    if (btnText) btnText.style.display = 'none';
-                    if (btnLoader) btnLoader.style.display = 'inline-block';
-                    if (submitBtn) submitBtn.disabled = true;
+                    function customEncodeURI(str) {
+                        return str.replace(/[@]/g, '%40')
+                            .replace(/[:]/g, '%3A')
+                            .replace(/[?]/g, '%3F')
+                            .replace(/[/]/g, '%2F')
+                            .replace(/[#]/g, '%23')
+                            .replace(/[&]/g, '%26')
+                            .replace(/[=]/g, '%3D')
+                            .replace(/[+]/g, '%2B')
+                            .replace(/[ ]/g, '%20');
+                    }
 
-                    // Clear previous messages
-                    messageDiv.style.display = 'none';
-                    messageDiv.innerHTML = '';
-                    errorDiv.style.display = 'none';
-                    errorDiv.innerHTML = '';
-                    const name = document.getElementById('name').value;
-                    const company = document.getElementById('company').value;
-                    const country = document.getElementById('country').value;
-                    const toEmail = document.getElementById('email').value;
+                    function containsHTML(value) {
+                        return /<[^>]*>/.test(value);
+                    }
 
+                    function setFieldError(input, errorElementId, message) {
+                        if (input) input.classList.add('is-invalid');
+                        const errorEl = document.getElementById(errorElementId);
+                        if (errorEl) {
+                            errorEl.innerHTML = '<span class="error-msg"><i class="fas fa-exclamation-circle me-1"></i>' + message + '</span>';
+                            errorEl.style.display = 'block';
+                        }
+                    }
 
-                    const phoneno = document.getElementById('phone').value;
-                    const service = document.getElementById('wslf').value;
-                    const email = document.getElementById('email').value; // Same as toEmail
-                    const message = document.getElementById('message').value;
+                    function clearFieldError(input, errorElementId) {
+                        if (input) input.classList.remove('is-invalid');
+                        const errorEl = document.getElementById(errorElementId);
+                        if (errorEl) {
+                            errorEl.innerHTML = '';
+                            errorEl.style.display = 'none';
+                        }
+                    }
 
+                    // Live restriction for Phone: numbers only (max 10 digits)
+                    if (phoneInput) {
+                        phoneInput.addEventListener('input', function () {
+                            this.value = this.value.replace(/\D/g, '');
+                            if (this.value.length > 10) {
+                                this.value = this.value.slice(0, 10);
+                            }
+                            if (this.classList.contains('is-invalid')) {
+                                validatePhone();
+                            }
+                        });
+                    }
 
-                    const formData = new FormData();
-                    formData.append('Name', name);
-                    formData.append('Company', company);
-                    formData.append('Country', country);
-                    formData.append('Email', toEmail);
-                    formData.append('Phone', phoneno);
+                    // Validation helper functions
+                    function validateName() {
+                        if (!nameInput) return true;
+                        const val = nameInput.value.trim();
+                        const nameRegex = /^[A-Za-z\s]+$/;
+                        if (!val) {
+                            setFieldError(nameInput, 'name-error', 'Please enter your name.');
+                            return false;
+                        } else if (val.length < 3) {
+                            setFieldError(nameInput, 'name-error', 'Name must be at least 3 characters.');
+                            return false;
+                        } else if (val.length > 50) {
+                            setFieldError(nameInput, 'name-error', 'Name cannot exceed 50 characters.');
+                            return false;
+                        } else if (!nameRegex.test(val)) {
+                            setFieldError(nameInput, 'name-error', 'Name can contain only letters and spaces.');
+                            return false;
+                        } else if (containsHTML(val)) {
+                            setFieldError(nameInput, 'name-error', 'HTML tags are not allowed.');
+                            return false;
+                        }
+                        clearFieldError(nameInput, 'name-error');
+                        return true;
+                    }
 
-                    formData.append('Service', service);
-                    formData.append('Message', message);
-                    formData.append('Origin', 'Contact');
+                    function validateCompany() {
+                        if (!companyInput) return true;
+                        const val = companyInput.value.trim();
+                        if (!val) {
+                            setFieldError(companyInput, 'company-error', 'Please enter your company name.');
+                            return false;
+                        } else if (val.length < 2) {
+                            setFieldError(companyInput, 'company-error', 'Company name must be at least 2 characters.');
+                            return false;
+                        } else if (val.length > 100) {
+                            setFieldError(companyInput, 'company-error', 'Company name cannot exceed 100 characters.');
+                            return false;
+                        } else if (containsHTML(val)) {
+                            setFieldError(companyInput, 'company-error', 'HTML tags are not allowed.');
+                            return false;
+                        }
+                        clearFieldError(companyInput, 'company-error');
+                        return true;
+                    }
 
+                    function validateCountry() {
+                        if (!countryInput) return true;
+                        const val = countryInput.value.trim();
+                        const countryRegex = /^[A-Za-z\s]+$/;
+                        if (!val) {
+                            setFieldError(countryInput, 'country-error', 'Please enter your country.');
+                            return false;
+                        } else if (val.length < 2) {
+                            setFieldError(countryInput, 'country-error', 'Country name must be at least 2 characters.');
+                            return false;
+                        } else if (val.length > 50) {
+                            setFieldError(countryInput, 'country-error', 'Country name cannot exceed 50 characters.');
+                            return false;
+                        } else if (!countryRegex.test(val)) {
+                            setFieldError(countryInput, 'country-error', 'Country can contain only letters and spaces.');
+                            return false;
+                        } else if (containsHTML(val)) {
+                            setFieldError(countryInput, 'country-error', 'HTML tags are not allowed.');
+                            return false;
+                        }
+                        clearFieldError(countryInput, 'country-error');
+                        return true;
+                    }
 
-                    //const url = 'http://172.21.4.191:80/api/email/sendemail?toEmail=' + customEncodeURI(toEmail) + //testing
+                    function validateEmail() {
+                        if (!emailInput) return true;
+                        const val = emailInput.value.trim();
+                        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                        if (!val) {
+                            setFieldError(emailInput, 'email-error', 'Please enter your email address.');
+                            return false;
+                        } else if (!emailRegex.test(val)) {
+                            setFieldError(emailInput, 'email-error', 'Please enter a valid email address (e.g. name@example.com).');
+                            return false;
+                        } else if (val.length > 100) {
+                            setFieldError(emailInput, 'email-error', 'Email cannot exceed 100 characters.');
+                            return false;
+                        } else if (containsHTML(val)) {
+                            setFieldError(emailInput, 'email-error', 'HTML tags are not allowed.');
+                            return false;
+                        }
+                        clearFieldError(emailInput, 'email-error');
+                        return true;
+                    }
 
-                    const url = 'https://oceanfms.com/AccutestAPI/api/sendEmail';
+                    function validatePhone() {
+                        if (!phoneInput) return true;
+                        const val = phoneInput.value.trim();
+                        const phoneRegex = /^[0-9]{10}$/;
+                        if (!val) {
+                            setFieldError(phoneInput, 'phone-error', 'Please enter your phone number.');
+                            return false;
+                        } else if (!phoneRegex.test(val)) {
+                            setFieldError(phoneInput, 'phone-error', 'Please enter a valid 10-digit phone number.');
+                            return false;
+                        }
+                        clearFieldError(phoneInput, 'phone-error');
+                        return true;
+                    }
 
-                    fetch(url, {
-                        method: 'POST',
-                        body: formData
-                    })
+                    function validateService() {
+                        if (!serviceInput) return true;
+                        const val = serviceInput.value.trim();
+                        if (!val) {
+                            setFieldError(serviceInput, 'wslf-error', 'Please enter the service name.');
+                            return false;
+                        } else if (val.length < 2) {
+                            setFieldError(serviceInput, 'wslf-error', 'Service name must be at least 2 characters.');
+                            return false;
+                        } else if (val.length > 100) {
+                            setFieldError(serviceInput, 'wslf-error', 'Service name cannot exceed 100 characters.');
+                            return false;
+                        } else if (containsHTML(val)) {
+                            setFieldError(serviceInput, 'wslf-error', 'HTML tags are not allowed.');
+                            return false;
+                        }
+                        clearFieldError(serviceInput, 'wslf-error');
+                        return true;
+                    }
 
+                    function validateMessage() {
+                        if (!messageInput) return true;
+                        const val = messageInput.value.trim();
+                        if (!val) {
+                            setFieldError(messageInput, 'message-error', 'Please enter your message.');
+                            return false;
+                        } else if (val.length < 10) {
+                            setFieldError(messageInput, 'message-error', 'Message must be at least 10 characters long.');
+                            return false;
+                        } else if (val.length > 500) {
+                            setFieldError(messageInput, 'message-error', 'Message cannot exceed 500 characters.');
+                            return false;
+                        } else if (containsHTML(val)) {
+                            setFieldError(messageInput, 'message-error', 'HTML tags are not allowed.');
+                            return false;
+                        }
+                        clearFieldError(messageInput, 'message-error');
+                        return true;
+                    }
+
+                    function validateCaptcha() {
+                        let captchaResponse = '';
+                        if (typeof grecaptcha !== 'undefined') {
+                            captchaResponse = grecaptcha.getResponse();
+                        }
+                        if (!captchaResponse) {
+                            const errorEl = document.getElementById('captcha-error');
+                            if (errorEl) {
+                                errorEl.innerHTML = '<span class="error-msg"><i class="fas fa-exclamation-circle me-1"></i>Please check the reCAPTCHA box to confirm you are not a robot.</span>';
+                                errorEl.style.display = 'block';
+                            }
+                            return false;
+                        }
+                        const errorEl = document.getElementById('captcha-error');
+                        if (errorEl) {
+                            errorEl.innerHTML = '';
+                            errorEl.style.display = 'none';
+                        }
+                        return true;
+                    }
+
+                    // Real-time validation listeners
+                    if (nameInput) {
+                        nameInput.addEventListener('blur', validateName);
+                        nameInput.addEventListener('input', function () { if (this.classList.contains('is-invalid')) validateName(); });
+                    }
+                    if (companyInput) {
+                        companyInput.addEventListener('blur', validateCompany);
+                        companyInput.addEventListener('input', function () { if (this.classList.contains('is-invalid')) validateCompany(); });
+                    }
+                    if (countryInput) {
+                        countryInput.addEventListener('blur', validateCountry);
+                        countryInput.addEventListener('input', function () { if (this.classList.contains('is-invalid')) validateCountry(); });
+                    }
+                    if (emailInput) {
+                        emailInput.addEventListener('blur', validateEmail);
+                        emailInput.addEventListener('input', function () { if (this.classList.contains('is-invalid')) validateEmail(); });
+                    }
+                    if (phoneInput) {
+                        phoneInput.addEventListener('blur', validatePhone);
+                    }
+                    if (serviceInput) {
+                        serviceInput.addEventListener('blur', validateService);
+                        serviceInput.addEventListener('input', function () { if (this.classList.contains('is-invalid')) validateService(); });
+                    }
+                    if (messageInput) {
+                        messageInput.addEventListener('blur', validateMessage);
+                        messageInput.addEventListener('input', function () { if (this.classList.contains('is-invalid')) validateMessage(); });
+                    }
+
+                    // Form submission logic
+                    contactForm.addEventListener("submit", function (e) {
+                        e.preventDefault();
+
+                        const isNameValid = validateName();
+                        const isCompanyValid = validateCompany();
+                        const isCountryValid = validateCountry();
+                        const isEmailValid = validateEmail();
+                        const isPhoneValid = validatePhone();
+                        const isServiceValid = validateService();
+                        const isMessageValid = validateMessage();
+                        const isCaptchaValid = validateCaptcha();
+
+                        if (!isNameValid || !isCompanyValid || !isCountryValid || !isEmailValid || !isPhoneValid || !isServiceValid || !isMessageValid || !isCaptchaValid) {
+                            const firstInvalid = contactForm.querySelector('.is-invalid');
+                            if (firstInvalid) {
+                                firstInvalid.focus();
+                            }
+                            return;
+                        }
+
+                        // Show loader and disable button
+                        if (btnText) btnText.style.display = 'none';
+                        if (btnLoader) btnLoader.style.display = 'inline-block';
+                        if (submitBtn) submitBtn.disabled = true;
+
+                        // Clear previous messages
+                        if (messageDiv) {
+                            messageDiv.style.display = 'none';
+                            messageDiv.innerHTML = '';
+                        }
+                        if (errorDiv) {
+                            errorDiv.style.display = 'none';
+                            errorDiv.innerHTML = '';
+                        }
+
+                        const formData = new FormData();
+                        formData.append('Name', nameInput.value.trim());
+                        formData.append('Company', companyInput.value.trim());
+                        formData.append('Country', countryInput.value.trim());
+                        formData.append('Email', emailInput.value.trim());
+                        formData.append('Phone', phoneInput.value.trim());
+                        formData.append('Service', serviceInput.value.trim());
+                        formData.append('Message', messageInput.value.trim());
+                        if (typeof grecaptcha !== 'undefined') {
+                            formData.append('g-recaptcha-response', grecaptcha.getResponse());
+                        }
+                        formData.append('Origin', 'Contact');
+
+                        const url = 'https://oceanfms.com/AccutestAPI/api/sendEmail';
+
+                        fetch(url, {
+                            method: 'POST',
+                            body: formData
+                        })
                         .then(function (response) {
-                            console.log('Response status:', response.status);
                             return Promise.all([response.json().catch(() => ({})), response.ok, response.status]);
                         })
                         .then(function ([jsonData, ok, status]) {
                             if (ok) {
-                                messageDiv.style.display = 'block';
-                                messageDiv.style.color = 'green';
-                                messageDiv.innerHTML = `<p>${jsonData.message || 'Thank you! Your message has been successfully sent.'}</p>`;
-                                errorDiv.style.display = 'none';
-                                errorDiv.innerHTML = '';
-                                document.getElementById('contactForm').reset();
+                                if (messageDiv) {
+                                    messageDiv.style.display = 'block';
+                                    messageDiv.style.color = '#28a745';
+                                    messageDiv.textContent = jsonData.message || "Thank you! Your message has been successfully sent.";
+                                }
+                                if (errorDiv) {
+                                    errorDiv.style.display = 'none';
+                                    errorDiv.innerHTML = '';
+                                }
+                                contactForm.reset();
+                                if (typeof grecaptcha !== 'undefined') {
+                                    grecaptcha.reset();
+                                }
+                                [nameInput, companyInput, countryInput, emailInput, phoneInput, serviceInput, messageInput].forEach(inp => {
+                                    if (inp) inp.classList.remove('is-invalid');
+                                });
                             } else {
-                                errorDiv.style.display = 'block';
-                                errorDiv.style.color = 'red';
-                                errorDiv.innerHTML = `<p>${jsonData.error || 'Oops! Something went wrong. Please try again.'}</p>`;
-                                messageDiv.style.display = 'none';
-                                messageDiv.innerHTML = '';
+                                if (errorDiv) {
+                                    errorDiv.style.display = 'block';
+                                    errorDiv.style.color = '#dc3545';
+                                    errorDiv.textContent = jsonData.error || 'Oops! Something went wrong. Please try again.';
+                                }
+                                if (messageDiv) {
+                                    messageDiv.style.display = 'none';
+                                    messageDiv.innerHTML = '';
+                                }
                             }
                         })
                         .catch(function (error) {
                             console.error('Fetch error:', error);
-                            errorDiv.style.display = 'block';
-                            errorDiv.style.color = 'red';
-                            errorDiv.innerHTML = `<p>Error: Network error or server is unreachable. Please try again later.</p>`;
-                            messageDiv.style.display = 'none';
-                            messageDiv.innerHTML = '';
+                            if (errorDiv) {
+                                errorDiv.style.display = 'block';
+                                errorDiv.style.color = '#dc3545';
+                                errorDiv.textContent = "Error: Network error or server is unreachable. Please try again later.";
+                            }
+                            if (messageDiv) {
+                                messageDiv.style.display = 'none';
+                                messageDiv.innerHTML = '';
+                            }
                         })
                         .finally(function () {
-                            // Hide loader and enable button
                             if (btnText) btnText.style.display = 'inline-block';
                             if (btnLoader) btnLoader.style.display = 'none';
                             if (submitBtn) submitBtn.disabled = false;
                         });
+                    });
                 });
-
-
-
             </script>
 
             <script src="js/jquery-3.7.1.min.js"></script>
