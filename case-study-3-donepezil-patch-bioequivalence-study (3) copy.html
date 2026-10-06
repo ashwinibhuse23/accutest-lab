@@ -346,12 +346,22 @@
             color: var(--brand-primary);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             margin: 0;
         }
 
         .cs-schedule-title i {
-            color: var(--brand-green);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background: linear-gradient(45deg, #007d55 0%, #3aa76d 25%, #3aa76d 50%, #3aa76d 75%, #d5ed3b 100%);
+            color: #ffffff;
+            font-size: 14px;
+            box-shadow: 0 3px 8px rgba(0, 125, 85, 0.25);
+            flex-shrink: 0;
         }
 
         .cs-g4 {
@@ -408,13 +418,13 @@
         }
 
         .cs-tb {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            background: var(--brand-lime-light);
-            border: 2px solid var(--brand-green);
+            background: linear-gradient(135deg, #007d55 0%, #3aa76d 30%, #88cf3b 65%, #d5ed3b 100%);
+            border: 1px solid #000000;
             display: inline-block;
-            box-shadow: 0 1px 3px rgba(0, 125, 85, 0.2);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
             transition: transform 0.2s;
         }
 
@@ -922,81 +932,111 @@
             font-size: 13px;
         }
 
-        /* Stats Band (.band) */
+        /* Stats Band Section (.cs-band-section) - styled like BA/BE Services in Numbers */
         .cs-band-section {
-            background: linear-gradient(135deg, #001f3f 0%, var(--brand-navy) 40%, #062b54 100%);
-            color: #ffffff;
-            padding: 60px 0;
             position: relative;
+            padding: 46px 30px 42px;
+            color: #ffffff;
+            border-radius: 20px;
             overflow: hidden;
-            margin: 50px 0 40px;
+            box-shadow: 0 14px 38px rgba(0, 25, 55, 0.2);
         }
 
         .cs-band-section::before {
             content: "";
             position: absolute;
-            top: 0;
-            right: -100px;
-            width: 450px;
-            height: 450px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 125, 85, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
-            pointer-events: none;
+            inset: 0;
+            background: url('images/hero-bg.jpg') center center / cover no-repeat;
+            filter: blur(2.5px);
+            -webkit-filter: blur(2.5px);
+            transform: scale(1.04);
+            z-index: 0;
         }
 
-        .cs-band-section h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(1.8rem, 3.2vw, 2.3rem);
-            font-weight: 700;
-            margin: 0 0 10px;
-            color: #ffffff;
+        .cs-band-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 25, 55, 0.80);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            z-index: 1;
+        }
+
+        .cs-band-content {
             position: relative;
+            z-index: 2;
+            text-align: center;
         }
 
-        .cs-band-section p {
-            max-width: 650px;
-            color: #c0d3e2;
-            margin: 0 0 35px;
-            font-size: 15.5px;
+        .cs-band-title {
+            font-family: var(--font-heading);
+            font-size: clamp(26px, 3.8vw, 32px);
+            font-weight: 700;
+            margin: 0 0 8px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .cs-band-subtitle {
+            max-width: 680px;
+            margin: 0 auto 32px;
+            font-size: 14.5px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
+            text-align: center;
         }
 
         .cs-stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px 25px;
+            align-items: flex-start;
         }
 
-        .cs-stat-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 14px;
-            padding: 26px 22px;
-            backdrop-filter: blur(8px);
-            transition: all 0.3s ease;
+        .cs-stat-item {
+            text-align: center;
         }
 
-        .cs-stat-card:hover {
-            background: rgba(255, 255, 255, 0.09);
-            transform: translateY(-3px);
-            border-color: rgba(213, 237, 59, 0.4);
-        }
-
-        .cs-stat-card b {
-            display: block;
+        .cs-stat-value {
             font-family: var(--font-heading);
-            font-size: clamp(2.4rem, 5vw, 3.2rem);
-            font-weight: 800;
-            line-height: 1.1;
+            font-size: clamp(30px, 3.6vw, 35px);
+            font-weight: 700;
             color: #ffffff;
+            line-height: 1.1;
             margin-bottom: 8px;
+            text-shadow: 0 0 10px rgba(0, 255, 150, 0.4);
         }
 
-        .cs-stat-card span {
-            color: #d1e1ed;
-            font-size: 14.5px;
-            line-height: 1.5;
-            display: block;
-            font-weight: 500;
+        .cs-stat-item h4 {
+            font-size: 13.5px;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin: 0 auto;
+            line-height: 1.45;
+            max-width: 270px;
+        }
+
+        @media (max-width: 991px) {
+            .cs-stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 28px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cs-band-section {
+                padding: 38px 20px 34px;
+                border-radius: 16px;
+            }
+            .cs-stats-grid {
+                grid-template-columns: 1fr;
+                gap: 26px;
+            }
+            .cs-band-subtitle {
+                margin-bottom: 25px;
+            }
         }
 
         /* Sponsors Takeaways (.take) */
@@ -1822,28 +1862,31 @@
             </div>
         </section>
 
-        <!-- Stats Section in Dark Website Navy -->
-        <section class="cs-band-section">
-            <div class="container">
-                <h2>The study in numbers</h2>
-                <p>Specific pharmacokinetic and bioequivalence outcome figures belong to the sponsor and are not
-                    disclosed here.</p>
-                <div class="cs-stats-grid">
-                    <div class="cs-stat-card">
-                        <b>14</b>
-                        <span>healthy adult volunteers (7 men, 7 women)</span>
-                    </div>
-                    <div class="cs-stat-card">
-                        <b>4 weeks</b>
-                        <span>of multiple-dose treatment in each period</span>
-                    </div>
-                    <div class="cs-stat-card">
-                        <b>3</b>
-                        <span>patch-specific checks: adhesion, skin irritation, absorption</span>
+        <!-- Stats Section in Numbers (BA/BE Services in Numbers design) -->
+        <div class="container my-5">
+            <section class="cs-band-section">
+                <div class="cs-band-overlay"></div>
+                <div class="cs-band-content">
+                    <h2 class="cs-band-title">The study in numbers</h2>
+                    <p class="cs-band-subtitle">Specific pharmacokinetic and bioequivalence outcome figures belong to the sponsor and are not
+                        disclosed here.</p>
+                    <div class="cs-stats-grid">
+                        <div class="cs-stat-item">
+                            <div class="cs-stat-value"><span class="cs-count" data-target="14">0</span></div>
+                            <h4>healthy adult volunteers (7 men, 7 women)</h4>
+                        </div>
+                        <div class="cs-stat-item">
+                            <div class="cs-stat-value"><span class="cs-count" data-target="4">0</span> weeks</div>
+                            <h4>of multiple-dose treatment in each period</h4>
+                        </div>
+                        <div class="cs-stat-item">
+                            <div class="cs-stat-value"><span class="cs-count" data-target="3">0</span></div>
+                            <h4>patch-specific checks: adhesion, skin irritation, absorption</h4>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
         <!-- What Sponsors Can Take From This & FAQ -->
         <div class="container">
@@ -2073,6 +2116,61 @@
             setTimeout(function () {
                 $(".preloader").fadeOut(150);
             }, 250);
+        });
+
+        // Slow, smooth counter animation for study numbers
+        document.addEventListener("DOMContentLoaded", function () {
+            const statsSection = document.querySelector(".cs-band-section");
+            if (!statsSection) return;
+
+            const counters = statsSection.querySelectorAll(".cs-count");
+            let animated = false;
+
+            const startSlowCounter = () => {
+                if (animated) return;
+                animated = true;
+
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute("data-target"), 10);
+                    const duration = 2400; // Slow 2.4 second animation
+                    let startTime = null;
+
+                    const step = (timestamp) => {
+                        if (!startTime) startTime = timestamp;
+                        const elapsed = timestamp - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+
+                        // Ease-out quad deceleration
+                        const easeOut = 1 - (1 - progress) * (1 - progress);
+                        const currentVal = Math.floor(easeOut * target);
+
+                        counter.textContent = currentVal;
+
+                        if (progress < 1) {
+                            requestAnimationFrame(step);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+
+                    requestAnimationFrame(step);
+                });
+            };
+
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            startSlowCounter();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.25 });
+
+                observer.observe(statsSection);
+            } else {
+                startSlowCounter();
+            }
         });
     </script>
 </body>
