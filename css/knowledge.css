@@ -3155,7 +3155,9 @@ header.main-header .header-sticky.active {
     margin-bottom: 25px;
     line-height: 1.6;
     font-family: 'Segoe UI', sans-serif;
-    text-align: justify;
+    text-align: left;
+    letter-spacing: -0.01em;
+    word-spacing: normal;
     flex-grow: 1;
 }
 
