@@ -8588,8 +8588,8 @@ body {
 /* Section Setup */
 .image-banner {
     position: relative;
-    height: 90vh;
-    padding: 170px 0;
+    min-height: 90vh;
+    padding: 140px 0 100px 0;
     background:
         linear-gradient(to right, rgba(0, 30, 60, 0.85) 40%, rgba(0, 30, 60, 0.2) 100%),
         url("../images/bg.jpg");
@@ -8600,7 +8600,6 @@ body {
     display: flex;
     align-items: center;
     color: #fff;
-    padding-top: 100px;
 }
 
 .content-wrapper {
@@ -8625,14 +8624,17 @@ body {
 .image-content {
     position: relative;
     z-index: 2;
+    padding-top: 25px;
     animation: fadeUp 1.2s ease forwards;
 }
 
 /* Subtitle */
+.image-banner .sub-title,
 .sub-title {
     display: inline-block;
     font-size: 18px;
     letter-spacing: 3px;
+    margin-top: 10px;
     margin-bottom: 15px;
     text-transform: capitalize;
 

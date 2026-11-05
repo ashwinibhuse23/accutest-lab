@@ -43,6 +43,32 @@
         #presentation2, #insights, #method, #podcast, #case-studies, #blogs {
             scroll-margin-top: 120px;
         }
+        .case-study-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 28px;
+        }
+        .case-study-pagination .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: #0a2d6e;
+            opacity: 0.25;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.35s ease;
+            margin: 0 !important;
+        }
+        .case-study-pagination .swiper-pagination-bullet-active {
+            width: 34px;
+            border-radius: 20px;
+            background: linear-gradient(45deg, #007d55 0%, #3aa76d 50%, #d5ed3b 100%);
+            opacity: 1;
+        }
+        .case-studies-slider {
+            padding: 8px 4px 14px;
+        }
     </style>
 </head>
 
@@ -1129,44 +1155,98 @@
 
 
 
-    <!-- Case Studies Section Start -->
-    <section class="case-study-section" id="case-studies">
-        <div class="container">
-            <div class="row align-items-center g-4">
-                <!-- Left Content -->
-                <div class="col-lg-7">
-                    <div class="cs-content-block">
-                        <span class="section-tag-alt">Case Studies</span>
-                        <h2 class="cs-section-title">Can a Patch Replace a Daily Pill?<br>Donepezil Bioequivalence Study</h2>
-                        <p class="cs-text">
-                            Accutest executed a 4-week steady-state comparative bioavailability study evaluating Donhesive donepezil transdermal patches against reference oral Aricept® tablets. The protocol integrated daily standardized FDA 5-point adhesion scoring, continuous skin tolerability monitoring, and post-wear residual drug quantification to calculate percutaneous absorption.
-                        </p>
-                        <div class="cs-key-points">
-                            <span class="cs-point"><i class="fa-solid fa-check"></i> 4-Week Steady-State Crossover</span>
-                            <span class="cs-point"><i class="fa-solid fa-check"></i> FDA 5-Point Adhesion Scale</span>
-                            <span class="cs-point"><i class="fa-solid fa-check"></i> Residual Drug PK Analysis</span>
+    <!-- Case Studies Section Start (Swiper Slider) -->
+    <section class="case-study-section animate" id="case-studies">
+        <div class="container position-relative">
+            <div class="swiper case-studies-slider">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1: Donepezil Transdermal Study -->
+                    <div class="swiper-slide">
+                        <div class="row align-items-center g-4">
+                            <!-- Left Content -->
+                            <div class="col-lg-7">
+                                <div class="cs-content-block">
+                                    <span class="section-tag-alt">Case Studies</span>
+                                    <h2 class="cs-section-title">Can a Patch Replace a Daily Pill?<br>Donepezil Bioequivalence Study</h2>
+                                    <p class="cs-text">
+                                        Accutest executed a 4-week steady-state comparative bioavailability study evaluating Donhesive donepezil transdermal patches against reference oral Aricept® tablets. The protocol integrated daily standardized FDA 5-point adhesion scoring, continuous skin tolerability monitoring, and post-wear residual drug quantification to calculate percutaneous absorption.
+                                    </p>
+                                    <div class="cs-key-points">
+                                        <span class="cs-point"><i class="fa-solid fa-check"></i> 4-Week Steady-State Crossover</span>
+                                        <span class="cs-point"><i class="fa-solid fa-check"></i> FDA 5-Point Adhesion Scale</span>
+                                        <span class="cs-point"><i class="fa-solid fa-check"></i> Residual Drug PK Analysis</span>
+                                    </div>
+                                    <div class="cs-action-wrap">
+                                        <a href="case-study-3-donepezil-patch-bioequivalence-study%20(3)%20copy.html" 
+                                           target="_blank" 
+                                           rel="noopener noreferrer"
+                                           class="btn-default btn-highlighted">
+                                            Read Full Case Study
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Image -->
+                            <div class="col-lg-5">
+                                <div class="cs-media-wrap">
+                                    <img src="images/case-study-donepezil.jpg" alt="Donepezil Transdermal Patch Bioequivalence Case Study" class="cs-media-img" />
+                                    <div class="cs-media-badge">
+                                        <i class="fa-solid fa-circle-check text-success me-1"></i>
+                                        <span>Audited Clinical Study Data</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="cs-action-wrap">
-                            <a href="case-study-3-donepezil-patch-bioequivalence-study%20(3)%20copy.html" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               class="btn-default btn-highlighted">
-                                Read Full Case Study
-                            </a>
+                    </div>
+
+                    <!-- Slide 2: DMPA-SC Injectable Study -->
+                    <div class="swiper-slide">
+                        <div class="row align-items-center g-4">
+                            <!-- Left Content -->
+                            <div class="col-lg-7">
+                                <div class="cs-content-block">
+                                    <span class="section-tag-alt">Case Studies</span>
+                                    <h2 class="cs-section-title">
+                                        Bioequivalence Study of DMPA-SC<br>
+                                        vs Sayana&reg;: 132 Women Enrolled,<br>
+                                        140 Days of Sampling
+                                    </h2>
+                                    <p class="cs-text">
+                                        How Accutest recruited a large female cohort of 132 women, managed ambulatory blood sampling across 20 weeks (140 days), and executed demanding subcutaneous injectable dosing with high precision&mdash;completed on schedule with 129 women completing the study.
+                                    </p>
+                                    <div class="cs-key-points">
+                                        <span class="cs-point"><i class="fa-solid fa-check"></i> 132 Women Enrolled (129 Completed)</span>
+                                        <span class="cs-point"><i class="fa-solid fa-check"></i> 140-Day Ambulatory PK Sampling</span>
+                                        <span class="cs-point"><i class="fa-solid fa-check"></i> Parallel Design vs Sayana&reg;</span>
+                                    </div>
+                                    <div class="cs-action-wrap">
+                                        <a href="case-study-2-dmpa-sc-bioequivalence-study.html"
+                                           target="_blank"
+                                           rel="noopener noreferrer"
+                                           class="btn-default btn-highlighted">
+                                            Read Full Case Study
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Image -->
+                            <div class="col-lg-5">
+                                <div class="cs-media-wrap">
+                                    <img src="images/case-study-dmpa.jpg" alt="DMPA-SC Subcutaneous Bioequivalence Case Study" class="cs-media-img" />
+                                    <div class="cs-media-badge">
+                                        <i class="fa-solid fa-circle-check text-success me-1"></i>
+                                        <span>Audited Clinical Study Data</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Image -->
-                <div class="col-lg-5">
-                    <div class="cs-media-wrap">
-                        <img src="images/case-study-donepezil.jpg" alt="Donepezil Transdermal Patch Bioequivalence Case Study" class="cs-media-img" />
-                        <div class="cs-media-badge">
-                            <i class="fa-solid fa-circle-check text-success me-1"></i>
-                            <span>Audited Clinical Study Data</span>
-                        </div>
-                    </div>
-                </div>
+                <!-- Pagination Indicators (Dots) -->
+                <div class="case-study-pagination"></div>
             </div>
         </div>
     </section>
@@ -1176,15 +1256,27 @@
         document.addEventListener("DOMContentLoaded", function () {
             const csSection = document.getElementById("case-studies");
             if (csSection) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            csSection.classList.add("animate");
-                            observer.unobserve(csSection);
-                        }
-                    });
-                }, { threshold: 0.15 });
-                observer.observe(csSection);
+                csSection.classList.add("animate");
+            }
+        });
+
+        window.addEventListener("load", function () {
+            if (typeof Swiper !== "undefined") {
+                new Swiper(".case-studies-slider", {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    speed: 500,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true
+                    },
+                    pagination: {
+                        el: ".case-study-pagination",
+                        clickable: true
+                    }
+                });
             }
         });
     </script>
