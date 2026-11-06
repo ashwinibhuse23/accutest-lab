@@ -8778,10 +8778,11 @@ body {
 
 .big-text {
     font-size: 40px;
+    margin-top: -30px;
 }
 
 .infoPoints strong {
-    margin-left: -4px;
+    margin-left: -7px;
     /* adjust value if needed */
 }
 
