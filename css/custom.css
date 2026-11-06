@@ -1675,7 +1675,7 @@ header.main-header .header-sticky.active {
 }
 
 .about-content h2 {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 700;
     color: #0a3d91;
     margin-bottom: 20px;
@@ -8351,7 +8351,7 @@ body {
 }
 
 .main-title {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 700;
     margin: 30px 0;
     line-height: 1.3;
